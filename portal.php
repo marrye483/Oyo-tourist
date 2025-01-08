@@ -3,14 +3,14 @@
 <?php require_once('config.php'); ?>
  <?php require_once('inc/header.php') ?>
   <body class="hold-transition layout-top-nav" >
-     <?php $page = isset($_GET['page']) ? $_GET['page'] : 'portal';  ?>
+     <?php $page = isset($_GET['page']) ? $_GET['page'] : 'index';  ?>
      <?php require_once('inc/topBarNav.php') ?>
      <?php 
         if(!file_exists($page.".php") && !is_dir($page)){
             include '404.html';
         }else{
           if(is_dir($page))
-            include $page.'/index.php';
+            include $page.'/portal.php';
           else
             include $page.'.php';
 
